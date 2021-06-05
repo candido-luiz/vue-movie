@@ -1,16 +1,18 @@
 <template>
-
-    <div class="movie-grid">
-        <div v-for="movie in moviesArray" :key="movie.id">
-            <MovieCard :movie="movie"/>
+    <main>
+        <div class="movie-grid">
+            <div v-for="movie in moviesArray" :key="movie.id">
+                <MovieCard :movie="movie"/>
+            </div>
         </div>
-    </div>
+    </main>
 
 </template>
 
 <script>
 import fetchOptions from '../fetchOptions';
 import MovieCard from './MovieCard.vue'
+
 export default {
     components:{
         MovieCard
@@ -30,6 +32,10 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+.movie-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-top: 20px;
+}
 </style>
