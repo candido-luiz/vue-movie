@@ -1,13 +1,15 @@
 <template>
-    <div class="movieCard">
-        <div class="moviePoster">
-            <img :src="moviePosterPath" alt="poster">
+    <router-link :to='"/" + movie.id'>
+        <div class="movieCard">
+            <div class="moviePoster">
+                <img :src="moviePosterPath" alt="poster">
+            </div>
+            <div class="movieInfo">
+                <div class="movieInfo-title">{{movie.title}}</div>
+                <div class="movieInfo-release">{{movieReleaseDate}}</div>
+            </div>
         </div>
-        <div class="movieInfo">
-            <div class="movieInfo-title">{{movie.title}}</div>
-            <div class="movieInfo-release">{{movieReleaseDate}}</div>
-        </div>
-    </div>
+    </router-link>
 </template>
 
 <script>
