@@ -17,5 +17,9 @@ footer{
     font-size: 16px;
     background-color: #292727;
     color: #fff;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
 }
 </style>

@@ -62,5 +62,47 @@ export default {
 </script>
 
 <style scoped>
-
+.movieBackDrop{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+}
+.movieDetails{
+    flex: 1;
+    display: flex;
+    max-width: 1200px;
+    height: 480px   ;
+    padding: 15px;
+    margin-top: 15px;
+    background-color: #1c1c1c7a;
+    color: #fff;
+}
+.movie-poster{
+    flex: 1;
+}
+.movie-info{
+    flex: 3;
+    padding-left: 10px;
+}
+.info-title{
+    margin-top: 25px;
+    font-size: 38px;
+    font-weight: bold;
+}
+.info-tagline{
+    font-size: 14px;
+}
+.info-overview{
+    max-width: 700px;
+    margin-top: 15px;
+    font-size: 19px;
+    line-height: 1.4;
+}
+.info-genres{
+    margin-top: 15px;
+    font-size: 18px;
+}
 </style>
