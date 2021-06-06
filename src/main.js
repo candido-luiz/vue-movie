@@ -12,11 +12,13 @@ const router = new VueRouter({
   routes: [
     {
       path: '/',
+      name: 'home',
       component: MovieList
     },
 
     {
       path: '/:id',
+      name: 'movie',
       component: MovieDetails
     }
   ]
