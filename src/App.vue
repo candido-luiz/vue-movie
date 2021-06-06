@@ -1,22 +1,19 @@
 <template>
   <div id="app">
     <Header />
-    <h1>Início do Projeto</h1>
-    <MovieList />
+    <router-view></router-view>
     <Footer />
   </div>
 </template>
 
 <script>
 import Header from './components/Header.vue'
-import MovieList from './components/MovieList';
 import Footer from './components/Footer.vue';
 
 export default {
   name: 'App',
   components: {
     Header,
-    MovieList,
     Footer
   }
 }
