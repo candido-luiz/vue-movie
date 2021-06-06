@@ -1,6 +1,8 @@
 <template>
   <header>
-        <div class="home">HomeLink</div>
+        <router-link to="/">
+            <div class="home">HomeLink</div>
+        </router-link>
         <input type="text" name="searchMovie" id="searchMovie" placeholder="buscar filme">
   </header>
 </template>
@@ -23,8 +25,12 @@ export default {
     padding: 10px;
     z-index: 2;
 }
+router-link{
+    text-decoration: none;
+}
 .home{
     font-size: 18px;
+    color: #fff;
 }
 #searchMovie{
     max-width: 400px;
