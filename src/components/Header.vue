@@ -1,6 +1,6 @@
 <template>
   <header>
-        <router-link to="/">
+        <router-link :to="{name: 'home'}">
             <div class="home">HomeLink</div>
         </router-link>
         <input type="text" name="searchMovie" id="searchMovie" placeholder="buscar filme">
