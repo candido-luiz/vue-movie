@@ -25,6 +25,7 @@ export default {
     },
 
     created: async function(){
+        // Busca os dados da TMDB API
         let fetchedMovies = await fetchOptions.getMovieList();
         this.moviesArray = fetchedMovies;
         console.log(this.moviesArray)

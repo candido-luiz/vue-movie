@@ -4,6 +4,7 @@ const API_KEY = 'd18230a62c17fab4dab7a444673ab6b0'
 const FETCH_URL = URL_BASE + API_KEY;
 
 export default {
+    // Retorna um Array contendo os filmes Populares da tmdb API
     getMovieList: async function(){
         let res = await fetch(FETCH_URL);
         let json = await res.json();

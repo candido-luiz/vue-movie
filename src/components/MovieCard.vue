@@ -17,6 +17,7 @@ export default {
     },
 
     computed:{
+        // Concatena a url base de uma imagem com o path do poster do objeto movie
         moviePosterPath: function(){
             const POSTER_PATH_BASE = 'https://image.tmdb.org/t/p/w300';
             let posterPath = this.movie.poster_path;
@@ -25,6 +26,7 @@ export default {
         },
 
         movieReleaseDate: function(){
+            // Retorna o ano de lançamento do filme
             let releaseDate = this.movie.release_date.slice(0,4);
             return releaseDate;
         }
