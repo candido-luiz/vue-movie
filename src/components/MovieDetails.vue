@@ -56,14 +56,7 @@ export default {
             return genresTypes.join(', ');
         }
     },
-
-    // Busca detalhes do filme pelo id, passado por parâmetro
-    created: async function(){
-        let idParam = this.$route.params.id;
-        let fetchedMovie = await fetchOptions.getMovieDetails(idParam);
-        this.movie = fetchedMovie;
-    },
-
+    
     watch: {
         //Esse watcher verifica quando uma alteração é feita no parâmetro
         //passado na url, e caso ocorra, realiza a busca do novo filme
@@ -74,7 +67,16 @@ export default {
             }
             
         }
-    }
+    },
+
+    // Busca detalhes do filme pelo id, passado por parâmetro
+    created: async function(){
+        let idParam = this.$route.params.id;
+        let fetchedMovie = await fetchOptions.getMovieDetails(idParam);
+        this.movie = fetchedMovie;
+    },
+
+    
 }
 </script>
 
