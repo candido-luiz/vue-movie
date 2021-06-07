@@ -5,8 +5,11 @@
                 <img :src="moviePosterPath" alt="poster">
             </div>
             <div class="movieInfo">
-                <div class="movieInfo-title">{{movie.title}}</div>
-                <div class="movieInfo-release">{{movieReleaseDate}}</div>
+                <div>
+                    <div class="movieInfo-title">{{movie.title}}</div>
+                    <div class="movieInfo-release">{{movieReleaseDate}}</div>
+                </div>
+                <div class="movieInfo-vote">{{movie.vote_average}}</div>
             </div>
         </div>
     </router-link>
@@ -61,6 +64,9 @@ export default {
     height: 100%;
 }
 .movieInfo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     position: absolute;
     background-color: #292727;
     padding: 8px;
@@ -74,5 +80,12 @@ export default {
     color: #fff;
     font-size: 18px;
     font-weight: bold;
+}
+.movieInfo-vote{
+    color: #fff;
+    font-size: 20px;
+    padding: 9px;
+    margin-right: 5px;
+    border: 1px solid #fff;
 }
 </style>
