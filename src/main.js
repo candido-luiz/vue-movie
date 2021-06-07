@@ -4,6 +4,7 @@ import App from './App.vue'
 
 import MovieList from './components/MovieList';
 import MovieDetails from './components/MovieDetails';
+import FoundMovies from './components/FoundMovies';
 
 Vue.config.productionTip = false
 Vue.use(VueRouter);
@@ -17,9 +18,15 @@ const router = new VueRouter({
     },
 
     {
-      path: '/:id',
+      path: '/movie/:id',
       name: 'movie',
       component: MovieDetails
+    },
+
+    {
+      path: '/movie',
+      name:'foundmovies',
+      component: FoundMovies,
     }
   ]
 });
