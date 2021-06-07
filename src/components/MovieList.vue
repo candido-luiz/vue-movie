@@ -28,7 +28,7 @@ export default {
         // Busca os dados da TMDB API
         let fetchedMovies = await fetchOptions.getMovieList();
         this.moviesArray = fetchedMovies;
-        console.log(this.moviesArray)
+        localStorage.setItem('movies', JSON.stringify(fetchedMovies))
     }
 }
 </script>

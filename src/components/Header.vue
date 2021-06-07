@@ -4,15 +4,30 @@
             <div class="home">MoView</div>
         </router-link>
         <div class="searchBar">
-            <input type="text" name="searchMovie" id="searchMovie" placeholder="buscar filme">
-            <button class="searchButton">Buscar</button>
+            <input type="text" name="searchMovie" id="searchMovie" placeholder="buscar filme" 
+            v-model="movieToSearch">
+            <button @click='searchForMovies' class="searchButton">Buscar</button>
         </div>
   </header>
 </template>
 
 <script>
 export default {
+    data(){
+        return{
+            movieToSearch: ''
+        }
+    },
 
+    methods:{
+        searchForMovies: function(){
+            if(this.movieToSearch.trim()){
+                this.$router.push({name: 'foundmovies', query: {name: this.movieToSearch}})
+            }
+            this.movieToSearch = '';
+            
+        }
+    }
 }
 </script>
 
