@@ -57,6 +57,18 @@ export default {
         let idParam = this.$route.params.id;
         let fetchedMovie = await fetchOptions.getMovieDetails(idParam);
         this.movie = fetchedMovie;
+    },
+
+    watch: {
+        //Esse watcher verifica quando uma alteração é feita no parâmetro
+        //passado na url, e caso ocorra, realiza a busca do novo filme
+        '$route': async function(to, from){
+            if(to.params.id !== from.params.id){
+                let fetchedMovie = await fetchOptions.getMovieDetails(to.params.id);
+                this.movie = fetchedMovie;
+            }
+            
+        }
     }
 }
 </script>
