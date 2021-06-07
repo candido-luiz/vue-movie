@@ -1,9 +1,12 @@
 <template>
   <header>
         <router-link :to="{name: 'home'}">
-            <div class="home">HomeLink</div>
+            <div class="home">MoView</div>
         </router-link>
-        <input type="text" name="searchMovie" id="searchMovie" placeholder="buscar filme">
+        <div class="searchBar">
+            <input type="text" name="searchMovie" id="searchMovie" placeholder="buscar filme">
+            <button class="searchButton">Buscar</button>
+        </div>
   </header>
 </template>
 
@@ -18,24 +21,48 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: darkslateblue;
+    background-color: #213e31;
     color: #fff;
     position: sticky;
     top: 0;
-    padding: 10px;
+    padding: 15px;
     z-index: 2;
 }
-router-link{
+a{
     text-decoration: none;
 }
 .home{
-    font-size: 18px;
+    font-size: 24px;
+    font-weight: bold;
     color: #fff;
 }
 #searchMovie{
-    max-width: 400px;
+    flex: 1;
     width: 100%;
     padding: 5px 7px;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: #292727;
+    color: #c7c2c2;
 }
+.searchBar{
+    display: flex;
+    max-width: 450px;
+    width: 100%;  
+    background: #424242;
+    padding: 1px;
 
+}
+.searchButton{
+    border: none;
+    background-color: #313131;
+    color: #fff;
+    padding-right: 10px;
+    padding-left: 10px;
+    cursor: pointer;
+}
+.searchButton:hover{
+    background-color: #696969;
+}
 </style>
