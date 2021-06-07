@@ -26,7 +26,7 @@ import fetchOptions from '../fetchOptions';
 export default {
     data(){
         return{
-            movie: {}
+            movie: null
         }
     },
 
