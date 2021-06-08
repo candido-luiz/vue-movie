@@ -23,6 +23,7 @@ export default {
         }
     },
 
+    //Busca os filmes favoritos do localStora e inicializa o 'favoriteMovies'
     created: function(){
         let favoriteMoviesList = JSON.parse(localStorage.getItem('favoriteMoviesList'));
         this.favoriteMovies = favoriteMoviesList;
