@@ -53,9 +53,18 @@ export default {
 a{
     text-decoration: none;
 }
+nav{
+    display: flex;
+    align-items: baseline;
+}
 .home{
     font-size: 24px;
     font-weight: bold;
+    color: #fff;
+}
+.favorites{
+    font-size: 17px;
+    margin-left: 20px;
     color: #fff;
 }
 #searchMovie{
