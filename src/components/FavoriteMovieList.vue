@@ -2,7 +2,9 @@
     <main>
         <div class="movie-grid">
             <div v-for="movie in favoriteMovies" :key="movie.id">
-                <MovieCard :movie="movie"/>
+                <MovieCard 
+                :movie="movie"
+                @removeCardFromFavoriteList="removeCard($event)"/>
             </div>
         </div>
     </main>
@@ -27,6 +29,20 @@ export default {
     created: function(){
         let favoriteMoviesList = JSON.parse(localStorage.getItem('favoriteMoviesList'));
         this.favoriteMovies = favoriteMoviesList;
+    },
+
+    methods: {
+        //Ao receber uma emissao de evento do componente MovieCard, remove
+        //o filme da lista de filmes favoritos, retirando-o da tela
+        removeCard: function($event){
+            let filteredFavoriteMovies = this.favoriteMovies.filter((movie) => {
+                return movie.id != $event.id;
+            })
+            this.favoriteMovies = filteredFavoriteMovies;
+
+            //Atualiza a lista de filmas armazenada no localStorage
+            localStorage.setItem('favoriteMoviesList', JSON.stringify(filteredFavoriteMovies));
+        }
     }
 
 }

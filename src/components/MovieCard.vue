@@ -2,7 +2,9 @@
         <div class="movieCard">
 
             <button v-if="!isFavorite" class="favoriteButton" @click="setFavorite">Favoritar</button>
-            <button v-else class="desFavoriteButton" @click="setFavorite">Favorito !</button>
+            
+            <button v-else class="desFavoriteButton" 
+            @click="setFavorite(); emitRemovieFavorite()">Favorito !</button>
 
             <div class="moviePoster">
                 <router-link  :to="{name: 'movie', params:{id: movie.id}}">
@@ -81,6 +83,10 @@ export default {
             });
 
             return isThisMovieInFavoriteList;
+        },
+
+        emitRemovieFavorite: function(){
+            this.$emit('removeCardFromFavoriteList', {id: this.movie.id});
         }
     },
 
