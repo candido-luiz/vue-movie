@@ -1,8 +1,15 @@
 <template>
   <header>
-        <router-link :to="{name: 'home'}">
-            <div class="home">MoView</div>
-        </router-link>
+        <nav>
+            <router-link :to="{name: 'home'}">
+                <div class="home">MoView</div>
+            </router-link>
+
+            <router-link :to="{name: 'favorites'}">
+                <div class="favorites">Favoritos</div>
+            </router-link>
+        </nav>
+
         <div class="searchBar">
             <input type="text" name="searchMovie" id="searchMovie" placeholder="buscar filme" 
             v-model="movieToSearch">
