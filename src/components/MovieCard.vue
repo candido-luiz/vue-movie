@@ -1,7 +1,8 @@
 <template>
         <div class="movieCard">
 
-            <button class="favoriteButton" @click="setFavorite" >Favoritar</button>
+            <button v-if="!isFavorite" class="favoriteButton" @click="setFavorite">Favoritar</button>
+            <button v-else class="desFavoriteButton" @click="setFavorite">Favorito !</button>
 
             <div class="moviePoster">
                 <router-link  :to="{name: 'movie', params:{id: movie.id}}">
@@ -124,13 +125,29 @@ export default {
 .movieCard:hover{
     transform: scale(0.95);
 }
-.movieCard:hover .movieInfo{
+.movieCard:hover .movieInfo,
+.movieCard:hover .favoriteButton,
+.movieCard:hover .desFavoriteButton{
     opacity: 0.9;
 }
-.favoriteButton{
+.favoriteButton, .desFavoriteButton{
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 7px;
+    right: 7px;
+    padding: 4px;
+    outline: none;
+    color: #ffffff;
+    font-weight: bold;
+    opacity: 0.2;
+}
+.favoriteButton{
+    border: 1px solid #f5f5f5;
+    background-color: #1b1b1b80;
+}
+.desFavoriteButton{
+    border: 1px solid #ffffff;
+    background-color: #d4c21880;
+
 }
 .moviePoster{
     width: 100%;
