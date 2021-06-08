@@ -120,4 +120,12 @@ nav{
         margin-left: 12px;
     }
 }
+@media screen and (max-width: 500px) {
+    .searchBar{
+        max-width: 200px;
+    }
+    #searchMovie{
+        font-size: 14px;
+    }
+}
 </style>

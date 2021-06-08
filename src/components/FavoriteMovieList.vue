@@ -97,4 +97,9 @@ export default {
         padding: 0 15px;
     }
 }
+@media screen and (max-width: 425px) {
+    .notFound{
+        font-size: 18px;
+    }
+}
 </style>

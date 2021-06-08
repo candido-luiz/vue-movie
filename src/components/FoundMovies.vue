@@ -103,12 +103,20 @@ export default {
     .h1{
         font-size: 24px;
     }
+    .notFound{
+        font-size: 24px
+    }
 }
 @media screen and (max-width: 510px) {
     .movie-grid{
         grid-template-columns: 1fr;
         justify-items: center;
         padding: 0 15px;
+    }
+}
+@media screen and (max-width: 425px) {
+    .notFound{
+        font-size: 18px;
     }
 }
 </style>
