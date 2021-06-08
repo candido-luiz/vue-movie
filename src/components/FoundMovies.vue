@@ -73,8 +73,11 @@ export default {
     margin-top: 20px;
 }
 .notFound{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     color: #fff;
-    text-align: center;
-    margin-top: 40px;
+    height: calc(100vh - 90px);
 }
 </style>

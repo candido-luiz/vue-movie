@@ -1,5 +1,5 @@
 <template>
-    <main>
+    <main v-if="favoriteMovies.length > 0">
         <div class="movie-grid">
             <div v-for="movie in favoriteMovies" :key="movie.id">
                 <MovieCard 
@@ -7,6 +7,12 @@
                 @removeCardFromFavoriteList="removeCard($event)"/>
             </div>
         </div>
+    </main>
+
+    <main v-else>
+        <h1 class="notFound">
+            Nenhum filme na lista de favoritos
+        </h1>
     </main>
 </template>
 
@@ -21,7 +27,7 @@ export default {
 
     data(){
         return {
-            favoriteMovies: []
+            favoriteMovies: null
         }
     },
 
@@ -53,5 +59,13 @@ export default {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     margin-top: 20px;
+}
+.notFound{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    height: calc(100vh - 90px);
 }
 </style>
