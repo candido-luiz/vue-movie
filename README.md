@@ -52,7 +52,7 @@ Antes de tudo, o uso de recursos Vue para a criação de toda a aplicação, foi
 da documentação oficial do Vue.js, [aqui]((https://vuejs.org/)).
 
 ### Criação de componentes 
-Todos os componentes (pasta "/components) são do tipo Single-File Componente, permitindo a definição de HTML, JavaScript e CSS em um mesmo aqruivo, o que agiliza o desenvolvimento de componentes.
+Todos os componentes (pasta "/components) são do tipo Single-File Componente, permitindo a definição de HTML, JavaScript e CSS em um mesmo arquivo, o que agiliza o desenvolvimento de componentes.
 
 ### Configuração das Rotas
 
@@ -75,5 +75,5 @@ Em relação à TMDB API, foram utilizados dois fetchs diferentes: um para busca
 
 A persistência de dados foi feita com o localStorage, que foi utilizado para:
 * Salvar a lista dos filmes buscados através da API, a fim de possibilitar a funcionalidade de busca de filmes.
-* Salvar/Remover os filmes escolhidos como favoritos, para que podessem ser exibidos na página de Favoritos.
+* Salvar/Remover os filmes escolhidos como favoritos, para que pudessem ser exibidos na página de Favoritos.
 
