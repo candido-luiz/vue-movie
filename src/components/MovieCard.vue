@@ -1,24 +1,37 @@
 <template>
-    <router-link :to="{name: 'movie', params:{id: movie.id}}">
         <div class="movieCard">
+
+            <button class="favoriteButton" @click="setFavorite" >Favoritar</button>
+
             <div class="moviePoster">
-                <img :src="moviePosterPath" alt="poster">
+                <router-link  :to="{name: 'movie', params:{id: movie.id}}">
+                    <img :src="moviePosterPath" alt="poster">
+                </router-link>
             </div>
-            <div class="movieInfo">
-                <div>
-                    <div class="movieInfo-title">{{movie.title}}</div>
-                    <div class="movieInfo-release">{{movieReleaseDate}}</div>
+
+            <router-link :to="{name: 'movie', params:{id: movie.id}}">
+                <div class="movieInfo">
+                    <div>
+                        <div class="movieInfo-title">{{movie.title}}</div>
+                        <div class="movieInfo-release">{{movieReleaseDate}}</div>
+                    </div>
+                    <div class="movieInfo-vote">{{movie.vote_average}}</div>
                 </div>
-                <div class="movieInfo-vote">{{movie.vote_average}}</div>
-            </div>
+            </router-link>
+
         </div>
-    </router-link>
 </template>
 
 <script>
 export default {
     props:{
         movie: Object
+    },
+
+    data(){
+        return {
+            isFavorite: false
+        }
     },
 
     computed:{
@@ -34,6 +47,65 @@ export default {
             // Retorna o ano de lançamento do filme
             let releaseDate = this.movie.release_date.slice(0,4);
             return releaseDate;
+        }
+    },
+    //Inicializa o dado 'isFavorite' com true caso já tenha
+    //sido favoritado em outras listas em que foi renderizado
+    mounted: function(){
+
+        if (this.isThisMovieInFavoriteList()){
+            this.isFavorite = true;
+        }
+    },
+
+    methods: {
+        //Seta ou Remove o filme como favorito
+        setFavorite: function(){
+            this.isFavorite = !this.isFavorite;
+        },
+        //Busca e Retorna do localStorage, a lista de filmes favoritos
+        getFavoritMovieList: function(localStorageItem){
+            let favoriteMoviesList = []
+            if(localStorageItem){
+                favoriteMoviesList = JSON.parse(localStorageItem);
+            } 
+
+            return  favoriteMoviesList;
+        },
+        //Verifica se o filme já está na lista de favoritos
+        isThisMovieInFavoriteList: function(){
+            let favoriteMoviesList = this.getFavoritMovieList(localStorage.getItem('favoriteMoviesList'));
+            let isThisMovieInFavoriteList = favoriteMoviesList.some((favoriteMovie) => {
+                return favoriteMovie.id == this.movie.id;
+            });
+
+            return isThisMovieInFavoriteList;
+        }
+    },
+
+    watch: {
+        //Observa as mudanças de estado de 'isFavorite' e adiciona
+        //ou remove o filme da lista de favoritos
+        isFavorite: function(newIsFavoriteStatus){
+
+            let favoriteMoviesList = this.getFavoritMovieList(localStorage.getItem('favoriteMoviesList'));
+            
+            if (newIsFavoriteStatus == true){
+                //Verifica se o filme não está na lista de favoritos e o adiciona
+                if(!this.isThisMovieInFavoriteList()){
+                    favoriteMoviesList.push(this.movie);
+                }
+                
+            }
+            else{
+                //Remove o filme da lista de favoritos
+                let filteredFavoriteMovieList = favoriteMoviesList.filter((favoriteMovie) => {
+                    return favoriteMovie.id != this.movie.id
+                })
+
+                favoriteMoviesList = filteredFavoriteMovieList;
+            }
+            localStorage.setItem('favoriteMoviesList', JSON.stringify(favoriteMoviesList));
         }
     }
 }
@@ -54,6 +126,11 @@ export default {
 }
 .movieCard:hover .movieInfo{
     opacity: 0.9;
+}
+.favoriteButton{
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 .moviePoster{
     width: 100%;
