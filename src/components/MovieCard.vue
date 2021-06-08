@@ -152,7 +152,8 @@ export default {
 }
 .desFavoriteButton{
     border: 1px solid #ffffff;
-    background-color: #d4c21880;
+    background-color: #dac400e1;
+    color: #000000;
 
 }
 .moviePoster{
