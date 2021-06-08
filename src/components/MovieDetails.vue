@@ -109,12 +109,12 @@ export default {
     justify-content: center;
 }
 .movieDetails{
+    max-width: 1300px;
     flex: 1;
     display: flex;
-    max-width: 1200px;
     height: 480px   ;
     padding: 15px;
-    margin-top: 15px;
+    margin-top: 35px;
     background-color: #1c1c1c7a;
     color: #fff;
 }

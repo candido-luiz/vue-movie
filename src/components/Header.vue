@@ -1,21 +1,24 @@
 <template>
-  <header>
-        <nav>
-            <router-link :to="{name: 'home'}">
-                <div class="home">MoView</div>
-            </router-link>
 
-            <router-link :to="{name: 'favorites'}">
-                <div class="favorites">Favoritos</div>
-            </router-link>
-        </nav>
+    <header>
+        <div class="header-content">
+            <nav>
+                <router-link :to="{name: 'home'}">
+                    <div class="home">MoView</div>
+                </router-link>
 
-        <div class="searchBar">
-            <input type="text" name="searchMovie" id="searchMovie" placeholder="buscar filme" 
-            v-model="movieToSearch">
-            <button @click='searchForMovies' class="searchButton">Buscar</button>
+                <router-link :to="{name: 'favorites'}">
+                    <div class="favorites">Favoritos</div>
+                </router-link>
+            </nav>
+
+            <div class="searchBar">
+                <input type="text" name="searchMovie" id="searchMovie" placeholder="buscar filme" 
+                v-model="movieToSearch">
+                <button @click='searchForMovies' class="searchButton">Buscar</button>
+            </div>
         </div>
-  </header>
+     </header>
 </template>
 
 <script>
@@ -39,7 +42,14 @@ export default {
 </script>
 
 <style >
-    header{
+header{
+    display: flex;
+    justify-content: center;
+    background-color: #213e31;
+}
+.header-content{
+    max-width: 1300px;
+    flex: 1;
     display: flex;
     justify-content: space-between;
     align-items: center;

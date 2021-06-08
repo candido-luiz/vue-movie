@@ -1,5 +1,5 @@
 <template>
-    <main v-if="moviesArray">
+    <main class="container" v-if="moviesArray">
         <div class="movie-grid">
             <div v-for="movie in moviesArray" :key="movie.id">
                 <MovieCard :movie="movie"/>
@@ -50,7 +50,13 @@ export default {
 </script>
 
 <style scoped>
+.container{
+    justify-content: center;
+    display: flex;
+}
 .movie-grid{
+    max-width: 1300px;
+    flex: 1;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     margin-top: 20px;

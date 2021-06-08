@@ -1,9 +1,11 @@
 <template>
     <main v-if="foundMovies.length > 0">
         <h1 class="h1">Filmes encontrados com ' {{ this.$route.query.name }} '</h1>
-        <div class="movie-grid">
-            <div v-for="movie in foundMovies" :key="movie.id">
-                <MovieCard :movie="movie"/>
+        <div class="container">
+            <div class="movie-grid">
+                <div v-for="movie in foundMovies" :key="movie.id">
+                    <MovieCard :movie="movie"/>
+                </div>
             </div>
         </div>
     </main>
@@ -65,9 +67,15 @@ export default {
 .h1{
     margin-top: 25px;
     color: #fff;
-    margin-left: 15px;
+    text-align: center;
+}
+.container{
+    justify-content: center;
+    display: flex;
 }
 .movie-grid{
+    max-width: 1300px;
+    flex: 1;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     margin-top: 20px;

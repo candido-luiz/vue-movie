@@ -1,5 +1,5 @@
 <template>
-    <main v-if="favoriteMovies.length > 0">
+    <main class="container" v-if="favoriteMovies.length > 0">
         <div class="movie-grid">
             <div v-for="movie in favoriteMovies" :key="movie.id">
                 <MovieCard 
@@ -55,7 +55,13 @@ export default {
 </script>
 
 <style scoped>
+.container{
+    justify-content: center;
+    display: flex;
+}
 .movie-grid{
+    max-width: 1300px;
+    flex: 1;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     margin-top: 20px;
