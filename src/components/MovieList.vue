@@ -7,32 +7,44 @@
         </div>
     </main>
 
-    <LoadingScreen v-else />
+    <LoadingScreen v-else-if="!fetchError" />
+
+    <ErrorMessage v-else />
 
 </template>
 
 <script>
+
 import fetchOptions from '../fetchOptions';
 import MovieCard from './MovieCard.vue';
 import LoadingScreen from './LoadingScreen.vue';
+import ErrorMessage from './ErrorMessage'
 
 export default {
     components:{
         MovieCard,
-        LoadingScreen
+        LoadingScreen,
+        ErrorMessage
     },
 
     data(){
         return{
-            moviesArray: null
+            moviesArray: null,
+            fetchError: false
         }
     },
 
     created: async function(){
         // Busca os dados da TMDB API
         let fetchedMovies = await fetchOptions.getMovieList();
-        this.moviesArray = fetchedMovies;
-        localStorage.setItem('movies', JSON.stringify(fetchedMovies))
+
+        if(fetchedMovies){
+            this.moviesArray = fetchedMovies;
+            localStorage.setItem('movies', JSON.stringify(fetchedMovies))
+        } else{
+            this.fetchError = true;
+        }
+        
     }
 }
 </script>

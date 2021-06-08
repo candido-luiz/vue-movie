@@ -14,17 +14,21 @@
         </div>
     </main>
 
-    <LoadingScreen v-else />
+    <LoadingScreen v-else-if="!fetchError" />
+
+    <ErrorMessage v-else />
     
 </template>
 
 <script>
 import fetchOptions from '../fetchOptions';
 import LoadingScreen from './LoadingScreen.vue';
+import ErrorMessage from './ErrorMessage.vue';
 
 export default {
     components:{
         LoadingScreen,
+        ErrorMessage
     },
 
     data(){
