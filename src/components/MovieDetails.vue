@@ -14,16 +14,19 @@
         </div>
     </main>
 
-    <main v-else class="loadingPage">
-        <div class="loader"></div>
-    </main>
+    <LoadingScreen v-else />
     
 </template>
 
 <script>
 import fetchOptions from '../fetchOptions';
+import LoadingScreen from './LoadingScreen.vue';
 
 export default {
+    components:{
+        LoadingScreen
+    },
+
     data(){
         return{
             movie: null

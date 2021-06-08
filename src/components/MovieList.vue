@@ -1,5 +1,5 @@
 <template>
-    <main>
+    <main v-if="moviesArray">
         <div class="movie-grid">
             <div v-for="movie in moviesArray" :key="movie.id">
                 <MovieCard :movie="movie"/>
@@ -7,20 +7,24 @@
         </div>
     </main>
 
+    <LoadingScreen v-else />
+
 </template>
 
 <script>
 import fetchOptions from '../fetchOptions';
-import MovieCard from './MovieCard.vue'
+import MovieCard from './MovieCard.vue';
+import LoadingScreen from './LoadingScreen.vue';
 
 export default {
     components:{
-        MovieCard
+        MovieCard,
+        LoadingScreen
     },
 
     data(){
         return{
-            moviesArray: []
+            moviesArray: null
         }
     },
 
