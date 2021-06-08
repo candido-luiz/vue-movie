@@ -107,6 +107,7 @@ export default {
     height: 600px;
     display: flex;
     justify-content: center;
+    padding: 0 15px;
 }
 .movieDetails{
     max-width: 1300px;
@@ -167,6 +168,15 @@ export default {
     }
     100% {
         transform: rotate(360deg);
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .movieDetails{
+        min-height: 480px;
+    }
+    .info-overview{
+        font-size: 14px;
     }
 }
 </style>

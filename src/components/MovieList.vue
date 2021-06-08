@@ -61,4 +61,24 @@ export default {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     margin-top: 20px;
 }
+
+@media screen and (max-width: 1100px) {
+    .movie-grid{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+@media screen and (max-width: 700px) {
+    .movie-grid{
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+        padding: 0 15px;
+    }
+}
+@media screen and (max-width: 510px) {
+    .movie-grid{
+        grid-template-columns: 1fr;
+        justify-items: center;
+        padding: 0 15px;
+    }
+}
 </style>

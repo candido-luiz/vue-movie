@@ -88,4 +88,27 @@ export default {
     color: #fff;
     height: calc(100vh - 90px);
 }
+
+@media screen and (max-width: 1100px) {
+    .movie-grid{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+@media screen and (max-width: 700px) {
+    .movie-grid{
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+        padding: 0 15px;
+    }
+    .h1{
+        font-size: 24px;
+    }
+}
+@media screen and (max-width: 510px) {
+    .movie-grid{
+        grid-template-columns: 1fr;
+        justify-items: center;
+        padding: 0 15px;
+    }
+}
 </style>

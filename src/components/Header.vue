@@ -106,4 +106,18 @@ nav{
 .searchButton:hover{
     background-color: #696969;
 }
+@media screen and (max-width: 700px) {
+    .searchBar{
+        max-width: 280px;
+    }
+}
+@media screen and (max-width: 530px) {
+    .home{
+        font-size: 18px;
+    }
+    .favorites{
+        font-size: 14px;
+        margin-left: 12px;
+    }
+}
 </style>
