@@ -24,12 +24,13 @@ import LoadingScreen from './LoadingScreen.vue';
 
 export default {
     components:{
-        LoadingScreen
+        LoadingScreen,
     },
 
     data(){
         return{
-            movie: null
+            movie: null,
+            fetchError: false
         }
     },
 
@@ -60,23 +61,34 @@ export default {
         }
     },
     
+    
+
+    // Busca detalhes do filme pelo id, passado por parâmetro
+    created: async function(){
+        let idParam = this.$route.params.id;
+        this.fetchForMovieDetails(idParam);
+    },
+
+    methods:{
+        fetchForMovieDetails: async function(id){
+            let fetchedMovie = await fetchOptions.getMovieDetails(id);
+            if(fetchedMovie){
+                this.movie = fetchedMovie;
+            }else{
+                this.fetchError = true;
+            }
+        }
+    },
+
     watch: {
         //Esse watcher verifica quando uma alteração é feita no parâmetro
         //passado na url, e caso ocorra, realiza a busca do novo filme
         '$route': async function(to, from){
             if(to.params.id !== from.params.id){
-                let fetchedMovie = await fetchOptions.getMovieDetails(to.params.id);
-                this.movie = fetchedMovie;
+                this.fetchForMovieDetails(to.params.id);
             }
             
         }
-    },
-
-    // Busca detalhes do filme pelo id, passado por parâmetro
-    created: async function(){
-        let idParam = this.$route.params.id;
-        let fetchedMovie = await fetchOptions.getMovieDetails(idParam);
-        this.movie = fetchedMovie;
     },
 
     
