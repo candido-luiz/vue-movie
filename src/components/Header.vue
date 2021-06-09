@@ -123,6 +123,7 @@ nav{
 @media screen and (max-width: 500px) {
     .searchBar{
         max-width: 200px;
+        font-size: 14px;
     }
     #searchMovie{
         font-size: 14px;

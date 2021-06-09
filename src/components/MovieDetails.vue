@@ -104,18 +104,19 @@ export default {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    height: 600px;
+    min-height: calc(100vh - 90px);
     display: flex;
     justify-content: center;
+    align-items: center;
     padding: 0 15px;
+    padding-bottom: 10px;
 }
 .movieDetails{
     max-width: 1300px;
     flex: 1;
     display: flex;
-    height: 480px   ;
     padding: 15px;
-    margin-top: 35px;
+    margin-top: 15px;
     background-color: #1c1c1c7a;
     color: #fff;
 }
@@ -171,9 +172,10 @@ export default {
     }
 }
 
-@media screen and (max-width: 700px) {
-    .movieDetails{
-        min-height: 480px;
+@media screen and (max-width: 800px) {
+    
+    .movie-poster{
+        display: none;
     }
     .info-overview{
         font-size: 14px;
