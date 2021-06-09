@@ -14,7 +14,7 @@ Essa aplicação front-end consiste em exibir na tela do usuário, os filmes pop
 
 ### Clone do repositório: 
 ```
-Alterar depois essa linha   
+git clone git@github.com:candido-luiz/vue-movie.git   
 ```
 ### Instalando: 
 No diretório onde realizou o clone do projeto:
