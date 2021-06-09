@@ -12,6 +12,10 @@ export default {
 
 <style>
 footer{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
     text-align: center;
     padding: 10px;
     font-size: 16px;

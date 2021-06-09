@@ -139,5 +139,9 @@ nav{
     .searchButton{
         font-size: 10px;
     }
+    .favorites{
+        font-size: 12px;
+        padding-right: 10px;
+    }
 }
 </style>

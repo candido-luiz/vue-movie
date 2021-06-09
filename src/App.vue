@@ -36,7 +36,9 @@ export default {
 }
 body{
   background-color: #1c1c1c;
-
+  /* manter o footer no bottom */
+  position: relative;
+  min-height: 100vh;
 }
 .fade-enter, .fade-leave-to {
   opacity: 0;
