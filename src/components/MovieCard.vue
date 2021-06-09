@@ -189,4 +189,9 @@ export default {
     margin-right: 5px;
     border: 1px solid #fff;
 }
+@media screen and (max-width: 800px) {
+    .movieInfo, .favoriteButton{
+        opacity: 0.7;
+    }
+}
 </style>
