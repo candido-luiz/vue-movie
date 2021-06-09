@@ -8,6 +8,8 @@ Essa aplicação front-end consiste em exibir na tela do usuário, os filmes pop
 
 [Vue-Router](https://router.vuejs.org/) para gerenciamento de rotas.
 
+[Vue-Devtools](https://devtools.vuejs.org/) para depuração da aplicação.
+
 ## Instalando e Rodando a aplicação 
 
 ### Clone do repositório: 
@@ -71,7 +73,9 @@ foi utilizado o gia de estilos definido pelos desenvolvedores do Vue, [aqui](htt
 
 ## API's e persistência de dados
 
-Em relação à TMDB API, foram utilizados dois fetchs diferentes: um para buscar a lista de filmes populares ao acessar a página inicial (MoView) e outro para buscar detalhes de um filme escolhido pelo usuário. 
+Em relação à TMDB API, foram utilizados dois fetchs diferentes:
+* Uum para buscar a lista de filmes populares ao acessar a página inicial (MoView).[Popular-Movies](https://developers.themoviedb.org/3/movies/get-popular-movies).
+* Outro para buscar detalhes de um filme escolhido pelo usuário.[Movie-Details](https://developers.themoviedb.org/3/movies/get-movie-details) .
 
 A persistência de dados foi feita com o localStorage, que foi utilizado para:
 * Salvar a lista dos filmes buscados através da API, a fim de possibilitar a funcionalidade de busca de filmes.
