@@ -1,7 +1,8 @@
 const URL_BASE = 'https://api.themoviedb.org/3/movie/popular?api_key='
 const API_KEY = 'd18230a62c17fab4dab7a444673ab6b0'
+const LANGUAGE_PARAM = '&language=pt-BR'
 
-const FETCH_MOVIELIST_URL = URL_BASE + API_KEY;
+const FETCH_MOVIELIST_URL = URL_BASE + API_KEY + LANGUAGE_PARAM;
 
 export default {
     // Retorna um Array contendo os filmes Populares da tmdb API
@@ -22,7 +23,7 @@ export default {
     // Retorna um objeto com os detalhes de um filme, através de um id
     getMovieDetails: async function(idParam){
         const MOVIE_URL_BASE = 'https://api.themoviedb.org/3/movie/'
-        let fetchMovieUrl = `${MOVIE_URL_BASE}${idParam}?api_key=${API_KEY}`;
+        let fetchMovieUrl = `${MOVIE_URL_BASE}${idParam}?api_key=${API_KEY}${LANGUAGE_PARAM}`;
         try {
             let res = await fetch(fetchMovieUrl);
             let json = await res.json();
