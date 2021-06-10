@@ -60,6 +60,7 @@ export default {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     margin-top: 20px;
+    margin-bottom: 40px;
 }
 
 @media screen and (max-width: 1100px) {
